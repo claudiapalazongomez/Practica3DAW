@@ -19,6 +19,7 @@ public class Modelo {
                 "<head>" +
                 "<title>Práctica 3 DAW</title>" +
                 "<link rel=\"stylesheet\" type=\"text/css\" href=\"styles.css\">" +
+                "<link rel=\"icon\" type=\"image/x-icon\" href=\"Favicon.jpg\">" +
                 "</head>" +
                 "<body>" +
                 "<div class=\"container\">" +

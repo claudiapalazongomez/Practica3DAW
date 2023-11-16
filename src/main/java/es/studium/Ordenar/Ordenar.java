@@ -52,8 +52,9 @@ public class Ordenar extends HttpServlet {
         out.println("<!DOCTYPE html>");
         out.println("<html>");
         out.println("<head>");
-        out.println("<title>Título de tu Página</title>");
+        out.println("<title>Práctica 3 DAW</title>");
         out.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"styles.css\">");
+        out.println("<link rel=\"icon\" type=\"image/x-icon\" href=\"Favicon.jpg\">");
         out.println("</head>");
         out.println("<body>");
         out.println("<div class=\"container\">");
