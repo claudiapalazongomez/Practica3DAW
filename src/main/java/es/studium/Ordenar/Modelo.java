@@ -12,4 +12,23 @@ public class Modelo {
 
         return numerosOrdenados;
     }
+	
+	static String generarRespuestaError() {
+        return "<!DOCTYPE html>" +
+                "<html>" +
+                "<head>" +
+                "<title>Práctica 3 DAW</title>" +
+                "<link rel=\"stylesheet\" type=\"text/css\" href=\"styles.css\">" +
+                "</head>" +
+                "<body>" +
+                "<div class=\"container\">" +
+                "<h1>Error</h1>" +
+                "<p>¡ERROR! Por favor, ingresa números separados por comas</p>" +
+                "<form action=\"index.html\">" +
+                "<input type=\"submit\" value=\"Volver al Inicio\"/>" +
+                "</form>" +
+                "</div>" +
+                "</body>" +
+                "</html>";
+    }
 }

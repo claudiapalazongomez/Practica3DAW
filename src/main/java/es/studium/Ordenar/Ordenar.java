@@ -33,7 +33,10 @@ public class Ordenar extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String numeros = request.getParameter("numeros");
 		if (!numeros.matches("^\\s*-?\\d+(\\s*,\\s*-?\\d+)*\\s*$")) {
-	        response.getWriter().println("¡ERROR! Por favor, ingresa números separados por comas");
+			String respuestaError = Modelo.generarRespuestaError();
+			response.setContentType("text/html");
+		    PrintWriter out = response.getWriter();
+		    out.println(respuestaError);
 	        return;
 	    }
 		ArrayList<Integer> original = new ArrayList<Integer>();
@@ -43,13 +46,25 @@ public class Ordenar extends HttpServlet {
 		original.add(Integer.parseInt(numero.trim()));
 		}
 		ArrayList<Integer> numerosOrdenados = Modelo.ordenarDeMayorAMenor(original);
-        response.getWriter().append("La lista ordenada de mayor a menor es: " + numerosOrdenados);
         
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
+        out.println("<!DOCTYPE html>");
+        out.println("<html>");
+        out.println("<head>");
+        out.println("<title>Título de tu Página</title>");
+        out.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"styles.css\">");
+        out.println("</head>");
+        out.println("<body>");
+        out.println("<div class=\"container\">");
+        out.println("<h1>Lista Ordenada de Mayor a Menor</h1>");
+        out.println("<div class=\"result\">La lista ordenada de mayor a menor es: " + numerosOrdenados + "</div>");
         out.println("<form action=\"index.html\">");
         out.println("<input type=\"submit\" value=\"Volver al Inicio\"/>");
         out.println("</form>");
+        out.println("</div>");
+        out.println("</body>");
+        out.println("</html>");
 	}
 
 	/**
